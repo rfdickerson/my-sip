@@ -17,6 +17,17 @@ make -j
 make install
 ```
 
+Example with Opus + GStreamer + H.264 enabled (from PJSIP repo root):
+```bash
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+./configure --enable-shared --prefix=$HOME/pjsip-install \
+  --with-opus \
+  --with-gstreamer \
+  --with-ffmpeg
+make -j
+make install
+```
+
 Then build this project:
 ```bash
 cmake -S janus_cpp -B janus_cpp/build -G Ninja -DPJSIP_ROOT=$HOME/pjsip-install
